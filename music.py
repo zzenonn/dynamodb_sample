@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-import threading
-import dynamo_ops
 import boto3
 
 def create_table(

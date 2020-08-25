@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import threading
 import boto3
 from boto3.dynamodb.conditions import Key
 
