@@ -22,15 +22,17 @@ def query_song_info(artist, song):
     return response['Items']
     
 # Will not work because album is not a key
-def query_album_songs(album):
+def query_album_songs(artist, album):
     dynamodb = boto3.resource('dynamodb')
 
     table = dynamodb.Table('music')
     response = table.query(
-        KeyConditionExpression=Key('album').eq(album)
+        IndexName='album_index',
+        KeyConditionExpression=Key('artist').eq(artist) & 
+                               Key('album').eq(album)
     )
     return response['Items']
 
 if __name__ == '__main__':
-    print(query_song_info("Taylor Swift", "Cardigan"))
+    print(query_album_songs("Taylor Swift", "Folklore"))
     
