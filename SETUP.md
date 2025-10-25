@@ -95,6 +95,8 @@ touch ~/.aws/credentials
 
 Edit the `~/.aws/credentials` file and add your AWS credentials:
 
+**For Windows users:** There is a batch file uploaded on Canvas that will open the credentials file for you.
+
 ```ini
 [default]
 aws_access_key_id = YOUR_ACCESS_KEY_HERE
