@@ -1,8 +1,7 @@
-boto3==1.28.74
-botocore==1.31.74
-docutils==0.15.2
-jmespath==0.10.0
-python-dateutil==2.8.1
-s3transfer==0.7.0
-six==1.15.0
-urllib3==1.25.10
+boto3==1.40.59
+botocore==1.40.59
+jmespath==1.0.1
+python-dateutil==2.9.0.post0
+s3transfer==0.14.0
+six==1.17.0
+urllib3==2.5.0
