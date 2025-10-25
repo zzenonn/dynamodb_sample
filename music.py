@@ -23,8 +23,6 @@ def create_table(
     key_schema = [{'AttributeName': partition_key, 'KeyType': 'HASH'}, 
                   {'AttributeName': sort_key, 'KeyType': 'RANGE'}]
                   
-    provisioned_throughput = {'ReadCapacityUnits': 5, 'WriteCapacityUnits': 10}
-    
     local_secondary_indexes = [{
             'IndexName': 'album_index',
             'KeySchema': [
@@ -38,7 +36,7 @@ def create_table(
         table = dynamodb.create_table(TableName=table_name,
                                       KeySchema=key_schema,
                                       AttributeDefinitions=attribute_definitions,
-                                      ProvisionedThroughput=provisioned_throughput,
+                                      BillingMode='PAY_PER_REQUEST',
                                       LocalSecondaryIndexes=local_secondary_indexes
                                       )
         return table
