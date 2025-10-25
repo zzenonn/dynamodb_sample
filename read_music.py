@@ -3,7 +3,7 @@ import boto3
 from boto3.dynamodb.conditions import Key
 
 def query_artist_songs(artist):
-    dynamodb = boto3.resource('dynamodb')
+    dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 
     table = dynamodb.Table('music')
     response = table.query(
@@ -12,7 +12,7 @@ def query_artist_songs(artist):
     return response['Items']
     
 def query_song_info(artist, song):
-    dynamodb = boto3.resource('dynamodb')
+    dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 
     table = dynamodb.Table('music')
     response = table.query(
@@ -22,7 +22,7 @@ def query_song_info(artist, song):
     return response['Items']
     
 def query_album_songs(artist, album):
-    dynamodb = boto3.resource('dynamodb')
+    dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 
     table = dynamodb.Table('music')
     response = table.query(

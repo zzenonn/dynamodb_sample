@@ -2,7 +2,7 @@
 import boto3
 
 if __name__ == '__main__':
-    dynamodb = boto3.resource('dynamodb')
+    dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
     
     music_table = dynamodb.Table('music')
     

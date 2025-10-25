@@ -8,7 +8,7 @@ def create_table(
         lsi
         ):
 
-    dynamodb = boto3.resource('dynamodb')
+    dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 
     # The variables below transform the arguments into the parameters expected by dynamodb.create_table.
 
@@ -45,7 +45,7 @@ def create_table(
         print("Error message {0}".format(err))
         
 def delete_table(name):
-    dynamodb = boto3.resource('dynamodb')
+    dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
     table = dynamodb.Table(name)
     table.delete()
 
